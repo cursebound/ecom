@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fake Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
+  </head>
+  <body>
+    <nav class="bg-gray-900 text-gray-100">
+      <div class="container mx-auto py-4">
+        <div class="flex justify-between">
+          <a href="/" class="text-xl font-semibold">
+            Fake Store
+          </a>
+          <div class="flex">
+            <a href="#" id="all-products" class="px-3">All</a>
+            <a href="#" id="men's-clothing" class="px-3">Men's</a>
+            <a href="#" id="women's-clothing" class="px-3">Women's</a>
+            <a href="#" id="electronics" class="px-3">Electronics</a>
+            <a href="#" id="jewelery" class="px-3">Jewelry</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mx-auto my-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="product-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>E-commerce website</title>
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/picocss@3.3.0/dist/pico.min.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#" id="all-products">All Products</a></li>
+				<li><a href="#" id="electronics">Electronics</a></li>
+				<li><a href="#" id="jewelery">Jewelery</a></li>
+				<li><a href="#" id="men-clothing">Men's Clothing</a></li>
+				<li><a href="#" id="women-clothing">Women's Clothing</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div id="product-list">
+			 Products will be displayed here 
+		</div>
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html> -->

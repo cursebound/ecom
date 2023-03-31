@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+<script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="h-screen">
+      
+    <nav class="flex items-center justify-between flex-wrap bg-blue-500 p-6">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <span class="font-semibold text-cyan-400 text-xl tracking-tight">FakeStore API</span>
+      </div>
+    </nav>
+    <div class="container mx-auto">
+      <div class = "h-screen mx-auto" id="product-details"></div>
+    </div>
+    </div>
+    <script>
+    const productId = new URLSearchParams(window.location.search).get('id');
+const productDetailsElement = document.getElementById('product-details');
+
+fetch(`https://fakestoreapi.com/products/${productId}`)
+  .then((response) => response.json())
+  .then((product) => {
+    const productCard = document.createElement('div');
+    // productCard.classList.add(
+    //   'max-w-xl',
+    //   'mx-auto',
+    //   'rounded',
+    //   'overflow-hidden',
+    //   'shadow-lg',
+    //   'bg-white',
+    //   'my-6'
+    // );
+  
+    productCard.innerHTML = `
+    <div class="flex flex-row">
+    <div class="w-1/2">
+    <img class="w-full h-4/5 snap-center" src="${product.image}" alt="${product.title}">
+    </div>
+    <div class="w-1/2">
+    <button class="rounded-none ...">Save Changes</button>
+    <div class="font-bold text-xl mb-2">${product.title}</div>
+    <button class="rounded-full text-cyan-400">${product.category}</button>
+        <p class="text-cyan-400 text-base">${product.category}</p>
+        <p class="text-gray-700 text-base">&#9733 ${product.rating.rate}</p>
+        <p class="text-gray-700 text-base">$${product.price.toFixed(2)}</p>
+        <p class="text-gray-700 text-base">${product.description}</p>
+    </div>
+    </div>
+    `;
+    productDetailsElement.appendChild(productCard);
+  })
+  .catch((error) => console.log(error));
+</script>
+  </body>
+  
+</html>
