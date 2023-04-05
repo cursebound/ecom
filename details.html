@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @font-face {
+    font-family: 'cremonaregular';
+    src: url('cremona-webfont.woff2') format('woff2'),
+         url('cremona-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+</style>
   </head>
   <body>
     <div class="h-screen">
       
     <nav class="flex items-center justify-between flex-wrap bg-blue-500 p-6">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-cyan-400 text-xl tracking-tight">FakeStore API</span>
+        <span class="font-semibold text-cyan-400 text-xl tracking-tight">The RIZZ Store</span>
       </div>
     </nav>
     <div class="container mx-auto">
@@ -37,18 +47,22 @@ fetch(`https://fakestoreapi.com/products/${productId}`)
     // );
   
     productCard.innerHTML = `
-    <div class="flex flex-row">
+    <div class="flex flex-row gap-40">
     <div class="w-1/2">
-    <img class="w-full h-4/5 snap-center" src="${product.image}" alt="${product.title}">
+    <img class="w-full h-4/5 mt-4 snap-center" src="${product.image}" alt="${product.title}">
     </div>
     <div class="w-1/2">
-    <button class="rounded-none ...">Save Changes</button>
-    <div class="font-bold text-xl mb-2">${product.title}</div>
-    <button class="rounded-full text-cyan-400">${product.category}</button>
-        <p class="text-cyan-400 text-base">${product.category}</p>
-        <p class="text-gray-700 text-base">&#9733 ${product.rating.rate}</p>
-        <p class="text-gray-700 text-base">$${product.price.toFixed(2)}</p>
-        <p class="text-gray-700 text-base">${product.description}</p>
+    
+    <div class="font-bold text-4xl mt-20 mb-2">${product.title}</div>
+    <hr>
+     
+        <p class=" text-black-400 m-10 border-2 p-4 text-center font-bold rounded-full border-green-500  hover:bg-yellow-300">Buy Now</p>
+        <hr>
+        <p class="text-gray-700 text-center text-base m-4">&#x2B50 ${product.rating.rate}</p>
+        <hr>
+        <p class="m-10 text-2xl  font-bold text-center text-gray-700">$${product.price.toFixed(2)}</p>
+        <hr>
+        <p class="text-gray-700 m-10 text-base">${product.description}</p>
     </div>
     </div>
     `;

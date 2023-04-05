@@ -24,9 +24,9 @@ function displayProducts(products) {
     productCard.classList.add('product-card');
     productCard.innerHTML = `
     
-<div class="w-full h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="bg-gradient-to-b from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  w-full h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow  ">
 <a href="#">
-    <img class="p-8 rounded-t-lg h-80 w-80" src="${product.image}" alt="${product.title}" />
+    <img class="p-8 rounded-xl h-80 w-80" src="${product.image}" alt="${product.title}" />
 </a>
 <div class="px-5 pb-5">
     <a href="#">
@@ -45,10 +45,7 @@ function displayProducts(products) {
         <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
     </div>
 </div>
-</div>
-
-      
-      
+</div>      
     `;
     productCard.addEventListener('click', () => {
       window.location.href = `details.html?id=${product.id}`;
